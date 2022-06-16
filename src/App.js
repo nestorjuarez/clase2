@@ -1,15 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
-import NavBar from './components/NavBar';
-
+import NavBar from './components/NavBar/NavBar';
+// import Input from './components/input';
+import ItemListContainer from './components/containers';
 function App() {
-  let nombre="Nestor"
   return (
-    <div className='container'>
-      <div className="App" >
+    <div>
+      
         <NavBar/>
+        {/* <Input valorPlaceholder={"este es la entrada una"}/>
+        <Input valorPlaceholder={"otro titulo"}/> */}
+        <ItemListContainer greeting="Mascotas"/>
 
-    </div>
     </div>
     
   );
