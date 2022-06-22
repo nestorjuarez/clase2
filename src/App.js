@@ -9,7 +9,7 @@ function App() {
         <NavBar/>
         {/* <Input valorPlaceholder={"este es la entrada una"}/>
         <Input valorPlaceholder={"otro titulo"}/> */}
-        <ItemListContainer greeting="Mascotas"/>
+        <ItemListContainer/>
 
     </div>
     

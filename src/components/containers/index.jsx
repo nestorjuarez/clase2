@@ -1,9 +1,14 @@
-import React from "react";
-const ItemListContainer = ({greeting})=>{
+import React, { useState }from "react";
+import ItemCount from "../ItemCount";
+const ItemListContainer = ()=>{
+
+   
+
     return(
-        <div>
-            <h5>{greeting}</h5>
-            <img src="images/mascotas.jpg" alt="" />
+        <div style={{backgroundColor:"#C0E881"}}>
+          
+            <ItemCount stock={5} initial={1}></ItemCount>
+           
         </div>
     );
 }

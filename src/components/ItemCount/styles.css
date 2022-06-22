@@ -1,0 +1,47 @@
+
+
+button {
+    width: 100px;
+    height: 50px;
+    border-radius: 8px;
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+    font-size: large;
+    
+}
+
+
+
+.micontainer {
+    background-color: rgb(195, 215, 216);
+    width:50%;
+    width: 33.33%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 30px;
+    margin: 0 auto;
+}
+
+.btnizq{
+    color:white;
+    background-color: blue;
+}
+
+.btnizq:hover{
+    background-color: rgb(3, 126, 69);
+    color:white;
+}
+.btnder{
+    color:white;
+    background-color:chocolate;
+}
+.btnder:hover{
+    background-color: rgb(3, 126, 69);
+    color:white;
+}
+
+.btncenter{
+color:gray;
+width: 150px;}
