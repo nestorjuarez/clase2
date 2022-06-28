@@ -2,6 +2,7 @@ import './App.css';
 import NavBar from './components/NavBar/NavBar';
 // import Input from './components/input';
 import ItemListContainer from './components/containers';
+import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div>
@@ -9,7 +10,7 @@ function App() {
         <NavBar/>
         {/* <Input valorPlaceholder={"este es la entrada una"}/>
         <Input valorPlaceholder={"otro titulo"}/> */}
-        <ItemListContainer/>
+        <ItemListContainer greeting="Hola Productos"/>
 
     </div>
     
