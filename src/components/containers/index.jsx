@@ -1,4 +1,4 @@
-import React, { useState, useEffect }from "react";
+import React, { useState, useEffect } from "react";
 import ItemList from "../ItemList";
 
 
@@ -14,7 +14,7 @@ const ItemListContainer = ({greeting})=>{
        const getProducts = async() => {
            try{
                
-              const response = await fetch('https://fakestoreapi.com/products');
+              const response = await fetch('https://fakestoreapi.com/products/10');
               const data = await response.json();
               setProductos(data);
               setItemVisible(true);
