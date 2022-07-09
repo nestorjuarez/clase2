@@ -13,9 +13,9 @@ const ItemList = ({products})=> {
  return (
     
     <Container>
-      <Row style={stylitos}>
+      <Row >
        {
-        products.map(product =>{
+        products.map((product) =>{
             return (
                 <Col md="auto">
                 <Item producto={product}/>

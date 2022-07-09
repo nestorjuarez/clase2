@@ -1,17 +1,22 @@
 import React, {useState, useEffect} from 'react'
 import {Spinner} from 'reactstrap'
-import 'bootstrap/dist/css/bootstrap.min.css'
 import Item from '../Item'
+import {useParams} from 'react-router-dom';
+
 
 export const ItemDetail = () => {
 
 const [product, setProduct] = useState(null);
 const [itemVisible, setItemVisible] = useState(false);
 
+const params = useParams();
+
+console.log(params);
+
 useEffect(()=>{
   const getProducto = async()=>{
     try {
-        const response = await fetch('https://fakestoreapi.com/products/1');
+        const response = await fetch(`https://fakestoreapi.com/products/${params.productId}`);
         const data= await response.json();
         setProduct(data)
         setItemVisible(true);
@@ -25,7 +30,7 @@ useEffect(()=>{
   getProducto();
 
 
-},[])
+},[params])
 
 
   return (

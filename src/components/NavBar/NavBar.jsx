@@ -1,14 +1,18 @@
 import React from 'react';
 import './NavBar.css';
 import Cartwidgget from '../CartWidgget';
+import {Link} from 'react-router-dom'
 
 const NavBar = ()=>{
     return (
     <ul>
-        <li><a href="default.asp">Home</a></li>
-        <li><a href="news.asp">News</a></li>
-        <li><a href="contact.asp">Contact</a></li>
-        <li><a href="about.asp">About</a></li>
+        <li><Link to='/'>Home</Link></li>
+        <li><Link to='/products/category/electronics'>Electronics</Link></li>
+        <li><Link to='/products/category/jewelery'>Jewelery</Link></li>
+        <li><Link to="/products/category/women's clothing">Women's Clothing</Link></li>
+        <li><Link to="/products/category/men's clothing">Men's Clothing</Link></li>
+
+
         <Cartwidgget/>
     </ul>
     )
