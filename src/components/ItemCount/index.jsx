@@ -5,7 +5,7 @@ const ItemCount = ({stock, initial}) => {
     const [cont, setCont] = useState(initial);
     
 
-    function addOn(num){
+    function onAdd(num){
         let res = cont + num;
         if (res>stock){
            res=5;
@@ -18,9 +18,9 @@ const ItemCount = ({stock, initial}) => {
     }
     return (
         <div className='micontainer'>
-            <button className='btnizq' onClick={()=>addOn(+1)}>+</button>
+            <button className='btnizq' onClick={()=>onAdd(+1)}>+</button>
             <button className='btncenter'>{cont}</button>
-            <button className='btnder' onClick={()=>addOn(-1)}>-</button>
+            <button className='btnder' onClick={()=>onAdd(-1)}>-</button>
         </div>
     );
 }

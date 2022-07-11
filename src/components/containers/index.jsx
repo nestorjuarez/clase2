@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import ItemList from "../ItemList";
 import {Spinner} from 'reactstrap'
 import {useParams} from 'react-router-dom';
+import ModalConEscape from "../ModalConEsc";
 
 const ItemListContainer = ({greeting})=>{
 
     const [productos, setProductos] = useState(null);
     const [itemVisible, setItemVisible] = useState(false);
     const [url, setUrl] = useState('https://fakestoreapi.com/products')
+    const [modalVisible, setModalVisible] = useState(true)
     const params = useParams();
     console.log(params.categoryId);
     
@@ -48,9 +50,16 @@ const ItemListContainer = ({greeting})=>{
             {greeting}
             {/* <ItemCount stock={5} initial={1}></ItemCount> */}
             {
+                // true ? 
+                //   modalVisible && <ModalConEscape handleClose={setModalVisible}/>
+                //   :  <Spinner animation="border" variant="warning" />
+            
+            
               itemVisible ? <ItemList products={productos}/> : <Spinner color="primary">
               Loading...
             </Spinner>
+            
+            
             }
         </div>
     );

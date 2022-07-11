@@ -11,7 +11,6 @@ const [itemVisible, setItemVisible] = useState(false);
 
 const params = useParams();
 
-console.log(params);
 
 useEffect(()=>{
   const getProducto = async()=>{
