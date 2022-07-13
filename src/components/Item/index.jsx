@@ -1,6 +1,8 @@
-import React, {useState} from 'react'
+import React, {useState, useContext, Children} from 'react'
 import {useNavigate} from 'react-router-dom'
 import Card from 'react-bootstrap/Card';
+import { Shop } from '../../Context/ShopContext.js'
+
 import './stylecard.css'
 import { CardFooter } from 'reactstrap';
 import Button from 'react-bootstrap/Button';
@@ -10,7 +12,7 @@ const Item = ({producto})=> {
 
   const [qtyAdded, setQtyAdded] = useState(0)
   const navigate = useNavigate()
-
+  const {addItem} = useContext(Shop)
   const handleDetail = ()=>{
     navigate(`/detail/${producto.id}`)
     
@@ -23,12 +25,17 @@ const Item = ({producto})=> {
     setQtyAdded(qty)
     
   }
+
+  const handleTerminate = ()=>{
+    console.log('vale verga')
+    addItem(producto, qtyAdded)
+    navigate('/cart')
+  }
    
   console.log(qtyAdded);
   return (
-     
-       
-                    <Card style={{ width: '18rem' }}
+           <div>
+              <Card style={{ width: '18rem' }}
                     onClick={handleDetail}>
                             <Card.Img variant="top" src={producto.image} className="CardImg" />
                             <Card.Body >
@@ -41,17 +48,18 @@ const Item = ({producto})=> {
                                
 
                         </Card.Body>
-                        <CardFooter className='text-center'>
-                          {!qtyAdded ? 
-                           <ButtonCount onConfirm={handleConfirm} maxQuantity={producto.rating.count} variant="success"/> :
-                           <button variant="outline-info" onClick={() => navigate('/cart')}>Terminar Compra</button>
-                            
-                          }
-                         
-
-                        </CardFooter>
+                       
 
                     </Card>
+                    {!qtyAdded ? 
+                      <ButtonCount onConfirm={handleConfirm} maxQuantity={producto.rating.count} variant="success"/> :
+                      <button variant="outline-info" onClick={handleTerminate}>Terminar Compra</button>
+                       
+                     }
+
+           </div>
+       
+                   
 
 
           

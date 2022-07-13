@@ -1,14 +1,28 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Shop } from '../../../Context/ShopContext';
+import ListGroup from 'react-bootstrap/ListGroup'
+import {TiDelete} from 'react-icons/ti'
+
+import Button from 'react-bootstrap/Button';
 
 
 const CartTerminarCompra = () => {
+
+  const {cart, setCart} = useContext(Shop)
+ 
   return (
-    <div>
-      <p>Compra Terminada</p>
-
-     <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente qui autem dolorum excepturi, ipsum eum exercitationem. Hic corrupti, aliquid, vel omnis iure quaerat in cupiditate iste, vero voluptatum qui consectetur.</h1>
-
-    </div>
+      <div>
+           <ListGroup variant="flush">
+           {
+              cart.map(producto => {
+                return <ListGroup.Item key={producto.id}>{producto.title} <img src={producto.image} width='50px'alt=""/><TiDelete size={32} onClick={()=>{alert('borrar el id '+producto.id)}}></TiDelete></ListGroup.Item>
+              })
+          }
+          </ListGroup>
+          <Button variant="outline-danger" onClick={()=>setCart([])}>Vaciar Carrito</Button>
+      </div>
+     
+    
   )
 }
 export default CartTerminarCompra;

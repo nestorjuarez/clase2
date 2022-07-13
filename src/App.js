@@ -8,12 +8,15 @@ import { ItemDetail } from './components/ItemDetails';
 import NotFound from './components/NotFound/inddex';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import CartTerminarCompra from './components/containers/CartTerminarCompra';
+import { ShopProvider } from './Context/ShopContext';
 function App() {
   return (
-    <BrowserRouter>
+    <ShopProvider>
+      <BrowserRouter>
+      <NavBar/>
         <div className='container'>
           
-          <NavBar/>
+
          
           <Routes>
              <Route path='/' element={<ItemListContainer/>}/>
@@ -28,6 +31,8 @@ function App() {
 
       </div>
     </BrowserRouter>
+    
+    </ShopProvider>
     
     
   );
