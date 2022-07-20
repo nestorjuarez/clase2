@@ -16,7 +16,6 @@ export const ShopProvider = ({children}) => {
         setCart([...cart])
       }else{
       setCart([...cart, {...producto, quantity: cantidad}])
-      console.log(cart)
       }
     }
 

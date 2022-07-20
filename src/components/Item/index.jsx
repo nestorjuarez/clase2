@@ -27,7 +27,6 @@ const Item = ({producto})=> {
   }
 
   const handleTerminate = ()=>{
-    console.log('vale verga')
     addItem(producto, qtyAdded)
     navigate('/cart')
   }

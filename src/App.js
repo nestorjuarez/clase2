@@ -9,13 +9,15 @@ import NotFound from './components/NotFound/inddex';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import CartTerminarCompra from './components/containers/CartTerminarCompra';
 import { ShopProvider } from './Context/ShopContext';
+import { LoadingComponent } from './components/LoadingComponent';
 function App() {
   return (
     <ShopProvider>
       <BrowserRouter>
       <NavBar/>
         <div className='container'>
-          
+        <LoadingComponent/>
+
 
          
           <Routes>
